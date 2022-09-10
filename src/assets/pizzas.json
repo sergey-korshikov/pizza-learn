@@ -1,0 +1,12 @@
+[
+  {
+    "id": 0,
+    "name": "Пепперони",
+    "imageUrl": "https://cdn.dodostatic.net/static/Img/Products/9853cd63a136490f9bb353d2e0eae59c_584x584.jpeg",
+    "sizes": [25, 35, 45],
+    "types": [0, 1],
+    "price": 803,
+    "rating": 4,
+    "category": 0
+  }
+]
