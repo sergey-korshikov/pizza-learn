@@ -4,12 +4,30 @@
   &__image {
     width: 260px;
     max-width: 100%;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+
+    img {
+      transform: translate(-50%, -50%);
+      position: absolute;
+      max-height: 100%;
+      max-width: 100%;
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+    }
   }
 
   &__title {
     font-size: 20px;
     font-weight: 900;
-    letter-spacing: 1%;
     margin-bottom: 20px;
   }
 
@@ -34,6 +52,7 @@
         font-weight: 600;
         font-size: 14px;
         cursor: pointer;
+
         @include noselect();
 
         &.active {
@@ -58,5 +77,80 @@
     font-size: 22px;
     line-height: 27px;
     letter-spacing: 0.015em;
+  }
+
+  &_placeholder {
+    height: 460px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &::after,
+    &::before,
+    .pizza-block__bottom::after,
+    .pizza-block__bottom::before,
+    .pizza-block__image::after {
+      content: '';
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      background-color: #f3f3f3;
+      animation: 1.5s linear infinite pizza-placeholder;
+    }
+
+    &::before {
+      order: -1;
+      height: 27px;
+      margin: 0 0 20px;
+    }
+
+    &::after {
+      order: -1;
+      height: 88px;
+    }
+
+    .pizza-block__image {
+      order: -2;
+
+      &::after {
+        border-radius: 50%;
+        width: calc(100% - 7%);
+        height: calc(100% - 7%);
+        transform: translate(-50%);
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        top: 0;
+      }
+    }
+
+    .pizza-block__bottom {
+      width: 100%;
+
+      &::before {
+        height: 27px;
+        width: 100px;
+      }
+
+      &::after {
+        width: 148px;
+        height: 45px;
+        border-radius: 30px;
+      }
+    }
+  }
+}
+
+@keyframes pizza-placeholder {
+  0% {
+    background-color: #f3f3f3;
+  }
+
+  50% {
+    background-color: #ddd;
+  }
+
+  100% {
+    background-color: #f3f3f3;
   }
 }

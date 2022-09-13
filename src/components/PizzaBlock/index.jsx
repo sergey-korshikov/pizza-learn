@@ -7,10 +7,10 @@ function PizzaBlock({title, price, image, sizes, types}) {
 
   return (
     <div className='pizza-block'>
-      <img className='pizza-block__image' src={image} alt='Pizza' />
-
+      <div className='pizza-block__image'>
+        <img src={image} alt={title} />
+      </div>
       <h4 className='pizza-block__title'>{title}</h4>
-
       <div className='pizza-block__selector'>
         <ul>
           {types.map((type, i) => (
@@ -28,7 +28,6 @@ function PizzaBlock({title, price, image, sizes, types}) {
           ))}
         </ul>
       </div>
-
       <div className='pizza-block__bottom'>
         <div className='pizza-block__price'>от {price} ₽</div>
         <button className='button button--outline button--add'>

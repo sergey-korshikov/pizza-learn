@@ -4,13 +4,14 @@
     flex-wrap: wrap;
 
     li {
-      background-color: #f9f9f9;
+      font-weight: bold;
       padding: 13px 30px;
       border-radius: 30px;
       margin: 0 10px 15px 0;
-      font-weight: bold;
-      cursor: pointer;
+      background-color: #f9f9f9;
       transition: background-color 0.1s ease-in-out;
+      cursor: pointer;
+
       @include noselect();
 
       &:hover {
@@ -24,6 +25,12 @@
       &.active {
         background-color: #282828;
         color: #fff;
+      }
+
+      @media screen and (max-width: 767px) {
+        font-size: 14px;
+        padding: 7px 15px;
+        border-radius: 16px;
       }
     }
   }

@@ -9,12 +9,16 @@ body {
 }
 
 .wrapper {
-  width: calc(100vw - 100px);
   height: 100%;
-  background-color: #fff;
-  margin: 50px auto;
-  border-radius: 10px;
   max-width: 1400px;
+  width: calc(100vw - 100px);
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 50px auto;
+
+  @media screen and (max-width: 479px) {
+    width: calc(100vw - 30px);
+  }
 }
 
 .content {
@@ -22,23 +26,27 @@ body {
 
   &__title {
     margin: 0 0 40px;
+    font-weight: 700;
+    font-size: 36px;
   }
 
   &__items {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 60px 40px;
+    &_list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 60px 40px;
 
-    @media screen and (max-width: 1419px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
+      @media screen and (max-width: 1419px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
 
-    @media screen and (max-width: 1099px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+      @media screen and (max-width: 1099px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-    @media screen and (max-width: 767px) {
-      grid-template-columns: 100%;
+      @media screen and (max-width: 767px) {
+        grid-template-columns: 100%;
+      }
     }
   }
 
@@ -54,14 +62,6 @@ body {
 .container {
   width: $container-width;
   margin: 0 auto;
-
-  &--cart {
-    max-width: 820px;
-    margin: 90px auto;
-    .content__title {
-      margin: 0;
-    }
-  }
 }
 
 .cart {
@@ -74,7 +74,7 @@ body {
   .content__title {
     display: flex;
     align-items: center;
-    font-size: 32px;
+    margin: 0;
 
     svg {
       position: relative;
