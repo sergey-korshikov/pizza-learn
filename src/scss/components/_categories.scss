@@ -3,6 +3,11 @@
     display: flex;
     flex-wrap: wrap;
 
+    @media screen and (max-width: 479px) {
+      justify-content: center;
+    }
+
+
     li {
       font-weight: bold;
       padding: 13px 30px;

@@ -1,11 +1,17 @@
 .sort {
   position: relative;
-  margin: 0 0 15px;
+  margin: 0 0 15px auto;
   padding: 12px 0;
+
+  @media screen and (max-width: 479px) {
+    margin: 0 auto 15px;
+  }
 
   &__label {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    min-width: 260px;
 
     svg {
       margin-right: 8px;
@@ -19,6 +25,24 @@
       color: $orange;
       border-bottom: 1px dashed $orange;
       cursor: pointer;
+
+      span {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 479px) {
+      min-width: auto;
+
+      b {
+        display: none;
+      }
+
+      span {
+        span {
+          display: inline;
+        }
+      }
     }
   }
 
@@ -28,11 +52,11 @@
     overflow: hidden;
     position: absolute;
     background: #ffffff;
-    box-shadow: 00 5px 15px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin-top: 15px;
     padding: 10px 0;
-    width: 160px;
+    width: 200px;
 
     ul {
       overflow: hidden;
@@ -50,6 +74,12 @@
           color: $orange;
         }
       }
+    }
+
+    @media screen and (max-width: 479px) {
+      transform: translate(-50%);
+      right: auto;
+      left: 50%;
     }
   }
 }

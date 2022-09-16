@@ -1,8 +1,6 @@
 import React from "react";
 
-function Categories({ valueId, onClickValue }) {
-  const categoryValues = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
-
+function Categories({ valueId, onClickValue, categoryValues }) {
   return (
     <div className='categories'>
       <ul>

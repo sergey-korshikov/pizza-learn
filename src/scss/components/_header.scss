@@ -13,9 +13,10 @@
     flex: 1;
     display: flex;
 
-    @media screen and (max-width: 599px) {
+    @media screen and (max-width: 767px) {
       flex: none;
       width: 100%;
+      margin: 0 0 30px;
     }
 
     img {
@@ -38,9 +39,12 @@
   &__cart {
     margin-left: 30px;
 
-    @media screen and (max-width: 599px) {
-      margin: 30px 0 0 auto;
-      min-width: 200px;
+    @media screen and (max-width: 767px) {
+      margin: 0 0 0 auto;
+    }
+
+    @media screen and (max-width: 479px) {
+      margin: 0 auto;
     }
   }
 }
